@@ -1,4 +1,8 @@
 defmodule BezexexchangeWeb.Router do
+  @moduledoc """
+  router module 
+  author: Sylvia Onwukwe
+  """
   use BezexexchangeWeb, :router
 
   pipeline :api do
@@ -8,10 +12,11 @@ defmodule BezexexchangeWeb.Router do
   scope "/api/v1", BezexexchangeWeb do
     pipe_through :api
 
-    resources "/openorders", OpenOrdersController
-    resources "/currency", CurrencyController 
-    resources "/language", LanguageController, except: [:new, :edit]
-    resources "/orders", OrderController
-    resources "/fees", FeeController, except: [:new, :edit, :delete]
+    resources "/openorders", OpenOrdersController #creates 8 routes for openorders
+    resources "/currency", CurrencyController #creates 8 routes for currency
+    resources "/language", LanguageController, except: [:new, :edit] #creates 6 routes for language
+    resources "/orders", OrderController #creates 8 routes for orders
+    resources "/pair", PairController #create 8 routes for pair
+    resources "/fees", FeeController, except: [:new, :edit, :delete] #creates 5 routes for fees
   end
 end

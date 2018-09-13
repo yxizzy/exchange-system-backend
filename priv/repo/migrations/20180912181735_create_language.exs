@@ -1,4 +1,8 @@
 defmodule Bezexexchange.Repo.Migrations.CreateLanguage do
+  @moduledoc """
+  migration module for create language
+  author: Sylvia Onwukwe
+  """
   use Ecto.Migration
 
   def change do
